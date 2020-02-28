@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'OpenArticle.dart';
 
 final titles = ["Impact Investing is Cool",
   "Nevis is Amazing",
@@ -35,33 +35,6 @@ class NewsArticle {
   }
 
   Widget openArticle(int i) {
-    return OpenArticleHelper(i);
-  }
-}
-
-class OpenArticleHelper extends StatelessWidget{
-  NewsArticle pullFrom;
-  OpenArticleHelper(int i) {
-    pullFrom = NewsArticle(i);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(pullFrom.title),
-      ),
-      body: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        SizedBox(
-          child: Image.network(pullFrom.picture),
-          width: 250,
-          height: 250,
-          ),
-        Flexible(child: Text(pullFrom.article)),
-      ]
-      ),
-    );
+    return OpenArticle(i);
   }
 }

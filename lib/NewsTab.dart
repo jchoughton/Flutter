@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'OpenArticle.dart';
 import 'NewsArticle.dart';
 
 class NewsTab extends StatelessWidget {
@@ -48,7 +49,7 @@ class _NewsTabState extends State<NewsTabHelper> {
         onPressed: (){
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => OpenArticleHelper(i)),
+              MaterialPageRoute(builder: (context) => OpenArticle(i)),
           );
         },
        child: Row(
