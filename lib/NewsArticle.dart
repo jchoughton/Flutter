@@ -11,30 +11,41 @@ final articles = ["Impact Investment is a cool way of investing in ideas across 
   "Nevis is the best new social app company that will not only let you invest in impact investment but also let you connect with other Nevites like you.",
   "Nevites like you can support Nevis support companies globaly to improve the world!!!!!"];
 
+final snipits = ["A","B","C"];
+/*["Learn more about impact investing",
+  "Learn more about Nevis and about how Nevis will change impact investing",
+  "By investing with Nevis you will be helping companies around the globe."];*/
+
 class NewsArticle {
-  String title;
-  String picture;
-  String article;
+  String articleTitle;
+  String articlePicture;
+  String articleBody;
+  String articleSnipit;
 
-  NewsArticle(int i) {
-    title = titles[i];
-    picture = pictures[i];
-    article = articles[i];
+  NewsArticle(int articleIndex) {
+    articleTitle = titles[articleIndex];
+    articlePicture = pictures[articleIndex];
+    articleBody = articles[articleIndex];
+    articleSnipit = snipits[articleIndex];
   }
 
-  String getTitle(int i) {
-    return (title);
+  String getArticleTitle(int articleIndex) {
+    return (articleTitle);
   }
 
-  String getPicture(int i) {
-    return (picture);
+  String getArticlePicture(int articleIndex) {
+    return (articlePicture);
   }
 
-  String getArticle(int i) {
-    return (article);
+  String getArticleSnipit(int articleIndex){
+    return (articleSnipit);
   }
 
-  Widget openArticle(int i) {
-    return OpenArticle(i);
+  String getArticleBody(int articleIndex) {
+    return (articleBody);
+  }
+
+  Widget openArticle(int articleIndex) {
+    return OpenArticle(articleIndex);
   }
 }

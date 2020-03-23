@@ -23,21 +23,21 @@ class NewsTabHelper extends StatefulWidget {
 class _NewsTabState extends State<NewsTabHelper> {
   final _suggestions = <NewsArticle>[];
   final _biggerFont = const TextStyle(fontSize: 18.0);
-  final _numArticles = 3;
+  final _numberOfArticles = 3;
   // #enddocregion RWS-var
 
   // #docregion _buildSuggestions
   Widget _buildSuggestions() {
     return ListView.builder(
-      itemCount: _numArticles,
+      itemCount: _numberOfArticles,
         padding: const EdgeInsets.all(16.0),
         itemBuilder: (context, i) {
-          final index = i%_numArticles;
-          if (index >= _suggestions.length) {
-            NewsArticle temp = NewsArticle(index%_numArticles);
+          final articleIndex = i%_numberOfArticles;
+          if (articleIndex >= _suggestions.length) {
+            NewsArticle temp = NewsArticle(articleIndex%_numberOfArticles);
             _suggestions.add(temp);
           }
-          return _buildButton(_suggestions[index], index);
+          return _buildButton(_suggestions[articleIndex], articleIndex);
         });
   }
   // #enddocregion _buildSuggestions
@@ -52,13 +52,21 @@ class _NewsTabState extends State<NewsTabHelper> {
               MaterialPageRoute(builder: (context) => OpenArticle(i)),
           );
         },
-       child: Row(
+       //child: Flexible(
+         child: Row(
            children: <Widget>[
              Text(
-               article.getTitle(i),
+               """
+               ${article.getArticleTitle(i)}
+               
+               ${article.getArticleSnipit(i)}
+               """,
                style: _biggerFont,
+               softWrap: true,
+               maxLines: 20,
               ),
     ])
+    //)
       )],
       );
     //]);

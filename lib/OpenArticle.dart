@@ -5,22 +5,21 @@ class OpenArticle extends StatelessWidget{
   OpenArticle(int i) {
     pullFrom = NewsArticle(i);
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(pullFrom.title),
+        title: Text(pullFrom.articleTitle),
       ),
       body: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(
-              child: Image.network(pullFrom.picture),
+              child: Image.network(pullFrom.articlePicture),
               width: 250,
               height: 250,
             ),
-            Flexible(child: Text(pullFrom.article)),
+            Flexible(child: Text(pullFrom.articleBody)),
           ]
       ),
     );

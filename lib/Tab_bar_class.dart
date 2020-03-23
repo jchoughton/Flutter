@@ -3,9 +3,9 @@ import 'HomeTab.dart';
 import 'NewsTab.dart';
 import 'ConnectTab.dart';
 import 'InvestTab.dart';
-import 'SettingTab.dart';
+import 'AccountTab.dart';
 
-  class NevelTabBar extends StatelessWidget{
+class NevisTabBar extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
@@ -70,4 +70,4 @@ import 'SettingTab.dart';
       },
     );
   }
-  }
+}
