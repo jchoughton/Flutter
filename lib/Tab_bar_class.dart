@@ -63,7 +63,7 @@ class NevisTabBar extends StatelessWidget{
           case 4:
             return CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
-                child: SettingTab(),
+                child: AccountTab(),
               );
             });
         }
